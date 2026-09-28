@@ -1,0 +1,11 @@
+{
+  "listen": "127.0.0.1:8080",
+  "sqlite_path": "./data/app.db",
+  "max_header_bytes": 65536,
+  "max_body_bytes": 1048576,
+  "max_chunk_line_bytes": 8192,
+  "read_timeout_ms": 15000,
+  "write_timeout_ms": 15000,
+  "idle_timeout_ms": 60000,
+  "enable_100_continue": true
+}

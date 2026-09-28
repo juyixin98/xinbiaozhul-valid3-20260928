@@ -1,0 +1,14 @@
+# build artifacts
+/server
+/server.exe
+*.db
+*.db-wal
+*.db-shm
+/data/
+/test/out/
+
+# go workspace noise (vendor/ IS committed for offline, reproducible builds)
+
+# editor/os
+.DS_Store
+*.swp
