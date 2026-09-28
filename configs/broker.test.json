@@ -1,0 +1,11 @@
+{
+  "listen": "127.0.0.1:11883",
+  "database": ":memory:",
+  "max_connections": 16,
+  "max_inflight_per_session": 4,
+  "max_offline_per_session": 8,
+  "send_queue_depth": 4,
+  "max_packet_bytes": 65536,
+  "keepalive_multiplier": 1.5,
+  "keepalive_max_seconds": 60
+}

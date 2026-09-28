@@ -1,0 +1,11 @@
+{
+  "listen": "127.0.0.1:1883",
+  "database": "data/mqttlocal.db",
+  "max_connections": 100,
+  "max_inflight_per_session": 32,
+  "max_offline_per_session": 1000,
+  "send_queue_depth": 64,
+  "max_packet_bytes": 1048576,
+  "keepalive_multiplier": 1.5,
+  "keepalive_max_seconds": 600
+}
