@@ -1,0 +1,17 @@
+{
+  "name": "daily-0930-newyork",
+  "timezone": "America/New_York",
+  "rrule": "FREQ=DAILY",
+  "start_at": "2026-03-01T09:30:00",
+  "exceptions": {
+    "2026-07-04": "SKIP",
+    "2026-03-10 12:00:00": "FORCE"
+  },
+  "gap_policy": "SKIP",
+  "fallback_policy": "EARLIEST",
+  "missing_date_policy": "SKIP",
+  "lateness_grace_seconds": 30,
+  "catchup_deadline_seconds": 3600,
+  "catchup_rate_limit": 100,
+  "action": { "type": "log" }
+}

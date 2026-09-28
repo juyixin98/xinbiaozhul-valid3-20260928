@@ -1,0 +1,12 @@
+# 生产依赖（精确版本）
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+psycopg[binary,pool]==3.2.3
+httpx==0.28.1
+tzdata==2024.2
+
+# 测试依赖（dateutil 仅在 tests/reference.py 中使用，生产代码不允许 import）
+pytest==8.3.4
+python-dateutil==2.9.0.post0

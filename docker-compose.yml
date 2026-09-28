@@ -1,0 +1,21 @@
+# 一次性本地 PostgreSQL（映射到 5433，避免占用本机 5432）
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sched-postgres
+    environment:
+      POSTGRES_USER: sched
+      POSTGRES_PASSWORD: sched
+      POSTGRES_DB: scheduler
+    ports:
+      - "127.0.0.1:5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sched -d scheduler"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - sched_pgdata:/var/lib/postgresql/data
+
+volumes:
+  sched_pgdata:

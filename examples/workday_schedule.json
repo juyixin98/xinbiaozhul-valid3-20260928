@@ -1,0 +1,11 @@
+{
+  "name": "payroll-end-of-month",
+  "timezone": "America/New_York",
+  "rrule": "FREQ=MONTHLY;BYMONTHDAY=-1;BYDAY=MO,TU,WE,TH,FR",
+  "start_at": "2026-01-30T17:00:00",
+  "exceptions": {},
+  "gap_policy": "SHIFT_FORWARD",
+  "fallback_policy": "EARLIEST",
+  "missing_date_policy": "SKIP",
+  "action": { "type": "log" }
+}
