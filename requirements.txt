@@ -1,0 +1,10 @@
+# Pinned, reproducible dependencies (Python 3.12).
+# Install: python -m venv .venv && .venv/bin/pip install -r requirements.txt
+fastapi==0.141.1
+uvicorn[standard]==0.54.0
+psycopg[binary]==3.3.6
+psycopg-pool==3.3.3
+pydantic==2.13.5
+pydantic-settings==2.15.0
+httpx==0.28.1
+pytest==9.1.1

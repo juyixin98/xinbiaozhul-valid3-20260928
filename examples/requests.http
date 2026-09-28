@@ -1,0 +1,67 @@
+# Example HTTP requests (httpie-style, curl equivalents in README).
+
+## 1. Daily 09:00 New York with a Monday-weekly alternative
+
+### Daily, DST zone, one extra date and an exception
+POST http://127.0.0.1:8080/schedules
+Content-Type: application/json
+
+{
+  "name": "ny-daily-report",
+  "timezone": "America/New_York",
+  "frequency": "daily",
+  "at": "09:00",
+  "start_date": "2024-01-01",
+  "end_date": "2024-12-31",
+  "exceptions": ["2024-07-04"],
+  "extra_dates": ["2024-12-26"],
+  "ambiguous_policy": "both",
+  "gap_policy": "skip",
+  "executor": {"type": "log", "payload_template": {"job": "report"}}
+}
+
+### Weekly Mon/Wed/Fri 13:45, non-DST zone
+POST http://127.0.0.1:8080/schedules
+{
+  "name": "sh-mwf",
+  "timezone": "Asia/Shanghai",
+  "frequency": "weekly",
+  "weekdays": [1, 3, 5],
+  "at": "13:45",
+  "start_date": "2024-01-01",
+  "end_date": "2025-12-31",
+  "executor": {"type": "webhook", "url": "http://127.0.0.1:9000/fire"}
+}
+
+### Monthly: 1st and last Monday
+POST http://127.0.0.1:8080/schedules
+{
+  "name": "monthly",
+  "timezone": "Europe/Berlin",
+  "frequency": "monthly",
+  "nth_weekdays": [{"nth": 1, "weekday": 1}, {"nth": -1, "weekday": 1}],
+  "at": "08:30",
+  "start_date": "2024-01-01",
+  "executor": {"type": "log"}
+}
+
+## 2. Inspect materialised fires (stable UTC identities)
+GET http://127.0.0.1:8080/schedules/{id}/fires
+
+## 3. Advance the scheduler (deterministic clock hook for demos/tests)
+POST http://127.0.0.1:8080/ticks
+X-Test-Now: 2024-11-03T07:00:00+00:00
+
+## 4. Edit a plan -> new version, pending old fires cancelled, history kept
+PUT http://127.0.0.1:8080/schedules/{id}
+{ ...same body, "at": "10:00"... }
+
+## 5. Pause / resume / delete
+POST http://127.0.0.1:8080/schedules/{id}/pause
+POST http://127.0.0.1:8080/schedules/{id}/resume
+DELETE http://127.0.0.1:8080/schedules/{id}
+
+## 6. Observability
+GET http://127.0.0.1:8080/runs?schedule_id={id}
+GET http://127.0.0.1:8080/audit?event=fire.succeeded&limit=50
+GET http://127.0.0.1:8080/runtime
