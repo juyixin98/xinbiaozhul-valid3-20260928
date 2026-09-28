@@ -1,0 +1,2 @@
+GET http://evil.example/ HTTP/1.1
+

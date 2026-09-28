@@ -1,0 +1,12 @@
+# 编译产物
+/h1parse
+*.test
+*.out
+
+# 本地 SQLite（默认文件名；内存模式不产生）
+/h1parse.db
+/h1parse.db-wal
+/h1parse.db-shm
+
+# Go fuzz 本地崩溃语料（保留已固化的 testdata，忽略临时缓存）
+# testdata/fuzz 下除已签入文件外的运行时缓存

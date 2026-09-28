@@ -1,0 +1,373 @@
+[
+  {
+    "id": "bad-absolute-form",
+    "file": "bad-absolute-form.http",
+    "desc": "absolute-form 目标（代理语义）必须拒绝",
+    "group": "syntax",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "request-line",
+    "sha256": "9a5fa0cdd9a21dc224828deb2070b82efa2755021a43106e40dff8c026cb9252"
+  },
+  {
+    "id": "bad-bare-lf-requestline",
+    "file": "bad-bare-lf-requestline.http",
+    "desc": "请求行用裸 LF 而非 CRLF",
+    "group": "linebreak",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "request-line",
+    "offset": 14,
+    "sha256": "7808457d561c5e27daf3314fbe6f70b6a6e840f4929446f240c2ddf44db80f51"
+  },
+  {
+    "id": "bad-body-too-large-declared",
+    "file": "bad-body-too-large-declared.http",
+    "desc": "声明 Content-Length 超默认 1MiB",
+    "group": "limits",
+    "expected": "reject",
+    "status": 413,
+    "kind": "payload_too_large",
+    "phase": "framing",
+    "sha256": "028ebf8253e5b08608e1bfadf7d1e981b284f38608392120503da4a2da523f14"
+  },
+  {
+    "id": "bad-chunk-bad-crlf",
+    "file": "bad-chunk-bad-crlf.http",
+    "desc": "chunk-data 后非 CRLF（X 替代 CR）",
+    "group": "chunked",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "chunk-data",
+    "sha256": "55656d2fb7bf2e894442cd0dbb5247edb475f50530c2f593960d503ccb4078b7"
+  },
+  {
+    "id": "bad-chunk-ext-empty-name",
+    "file": "bad-chunk-ext-empty-name.http",
+    "desc": "分号后扩展名为空（=0）",
+    "group": "chunked",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "chunk-ext",
+    "sha256": "365c155ec2d926f21ec2a8fe55ee557e1404a2542e47769eab4e94b725dee1d2"
+  },
+  {
+    "id": "bad-chunk-ext-trailing-semicolon",
+    "file": "bad-chunk-ext-trailing-semicolon.http",
+    "desc": "尾随分号但无扩展名",
+    "group": "chunked",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "chunk-ext",
+    "sha256": "bb3863fc0e5534c7c3508fa3f8a8b8a6f92beb65f44db14f987692ea2da54680"
+  },
+  {
+    "id": "bad-chunk-size-hex",
+    "file": "bad-chunk-size-hex.http",
+    "desc": "chunk-size 非十六进制",
+    "group": "chunked",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "chunk-size",
+    "sha256": "5c79a8b6c2332406fddc7df369af6d59ee882a6e748f09340f9e0dcca84f7a35"
+  },
+  {
+    "id": "bad-chunk-size-leading-space",
+    "file": "bad-chunk-size-leading-space.http",
+    "desc": "chunk-size 前导空白（解析差异走私手法）",
+    "group": "chunked",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "chunk-size",
+    "sha256": "b31b9991ca8de7ffb49519610397406a40ad45ec2a03ece8b077069dc9de4879"
+  },
+  {
+    "id": "bad-chunk-size-overflow",
+    "file": "bad-chunk-size-overflow.http",
+    "desc": "chunk-size 超 63 位",
+    "group": "chunked",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "sha256": "9a2d8e29e5e89158b9051d5401696cc136ba2ae785c3e4473a4daca4df25f9db"
+  },
+  {
+    "id": "bad-chunk-too-large",
+    "file": "bad-chunk-too-large.http",
+    "desc": "单 chunk 256B，测试以 MaxChunkSize=128 配置运行",
+    "group": "limits",
+    "expected": "reject",
+    "status": 413,
+    "kind": "payload_too_large",
+    "phase": "chunk-size",
+    "note": "e2e 以 H1PARSE_MAX_CHUNK_BYTES=128 运行该例",
+    "sha256": "c93b93ce92e9645581fa261b98f5c96c588a5f9463cf1553110fb19af2bc6f6a"
+  },
+  {
+    "id": "bad-chunked-not-last",
+    "file": "bad-chunked-not-last.http",
+    "desc": "chunked 后还有编码",
+    "group": "smuggling",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "sha256": "ed81d5aedbc88e17523ee51176eae05039f0366f7558ef0b28570ad006edd055"
+  },
+  {
+    "id": "bad-cl-comma-list",
+    "file": "bad-cl-comma-list.http",
+    "desc": "逗号形式的 Content-Length 列表",
+    "group": "smuggling",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "sha256": "3fb39e61236a24fb255593bc935373e856ae9a9355e491712586777f6b45ee9a"
+  },
+  {
+    "id": "bad-cl-overflow",
+    "file": "bad-cl-overflow.http",
+    "desc": "Content-Length 溢出",
+    "group": "syntax",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "sha256": "9ba49b4e8d735b15062a0e43aa0fcc7674b0c8e4b20f646310a52634086e99d1"
+  },
+  {
+    "id": "bad-extra-sp-requestline",
+    "file": "bad-extra-sp-requestline.http",
+    "desc": "请求行多余空白",
+    "group": "syntax",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "request-line",
+    "sha256": "1e715a8295bae7d8f8d2d1437ee2396bd06d3bf8afd1c37f3fd57d2306756ce5"
+  },
+  {
+    "id": "bad-no-colon",
+    "file": "bad-no-colon.http",
+    "desc": "头部域无冒号",
+    "group": "syntax",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "sha256": "ca66619ec59805b23154fbaeff6961f1f57bf712ed1b9873e4fae50781673f08"
+  },
+  {
+    "id": "bad-space-in-fieldname",
+    "file": "bad-space-in-fieldname.http",
+    "desc": "字段名含空格（obs-fold 类）",
+    "group": "syntax",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "header",
+    "sha256": "f50ec5aec7ddabee0cac9f6b9e075e4e49548dd6b7d1b8f78118ccb367bb816c"
+  },
+  {
+    "id": "bad-stray-cr-in-value",
+    "file": "bad-stray-cr-in-value.http",
+    "desc": "头部值中游离 CR",
+    "group": "linebreak",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "header",
+    "sha256": "1f388732dade3cc5758a9893d2b03df33f773411d722c681bdec21c72e1d91c3"
+  },
+  {
+    "id": "bad-te-identity",
+    "file": "bad-te-identity.http",
+    "desc": "不支持的 transfer-coding",
+    "group": "smuggling",
+    "expected": "reject",
+    "status": 501,
+    "kind": "unsupported_transfer_coding",
+    "sha256": "c48e30acea19849ccae5617812c95e597a3e8d6912e4d7d391c6f4a937f3b822"
+  },
+  {
+    "id": "bad-trailing-cr-only",
+    "file": "bad-trailing-cr-only.http",
+    "desc": "请求行后只有 CR 即 EOF，永不补 LF",
+    "group": "linebreak",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "request-line",
+    "sha256": "178356640710dd8243c8b463cb47e6df15cc53c08d656e652dec89bdb42bee1e"
+  },
+  {
+    "id": "bad-version-10",
+    "file": "bad-version-10.http",
+    "desc": "非 HTTP/1.1 版本",
+    "group": "syntax",
+    "expected": "reject",
+    "status": 505,
+    "kind": "version_unsupported",
+    "phase": "request-line",
+    "sha256": "6ec63b40bcbc26b71deda762dfd844f0c7f15410fd084e53085d3dcbc357675f"
+  },
+  {
+    "id": "legal-cl-body-swallow",
+    "file": "legal-cl-body-swallow.http",
+    "desc": "32 字节体完整吞掉内嵌伪造请求串，不产生第二请求",
+    "group": "legal",
+    "expected": "accept",
+    "status": 201,
+    "accepts": 1,
+    "legal": true,
+    "sha256": "2bfc8a8129269ac9e2d78163178c2c690d264dfa72e910a154ff50fee4ae8203"
+  },
+  {
+    "id": "legal-duplicate-cl-leadingzero",
+    "file": "legal-duplicate-cl-leadingzero.http",
+    "desc": "重复 Content-Length 仅前导零差异（数值相同）应接受",
+    "group": "legal",
+    "expected": "accept",
+    "status": 404,
+    "accepts": 1,
+    "legal": true,
+    "note": "POST / 业务无路由回 404，但协议必须接受重复且等值的 CL",
+    "sha256": "c4e48f5f56c04df69c3bb7d86eeb23a95e33eae94219aac869f3a17e2a193a24"
+  },
+  {
+    "id": "legal-expect-continue",
+    "file": "legal-expect-continue.http",
+    "desc": "Expect: 100-continue",
+    "group": "legal",
+    "expected": "accept",
+    "status": 201,
+    "accepts": 1,
+    "legal": true,
+    "sha256": "6fc816ff4356dec146cea40d700a1342abe5864f9986e81d369a3b38c7e8904e"
+  },
+  {
+    "id": "legal-get-basic",
+    "file": "legal-get-basic.http",
+    "desc": "最简 GET，持久连接",
+    "group": "legal",
+    "expected": "accept",
+    "status": 200,
+    "accepts": 1,
+    "legal": true,
+    "sha256": "27a51005ab80701d2c0b8d59bc88b9e08b7046dd6587a33b129229528449628c"
+  },
+  {
+    "id": "legal-get-cl-zero",
+    "file": "legal-get-cl-zero.http",
+    "desc": "GET 带显式 Content-Length: 0",
+    "group": "legal",
+    "expected": "accept",
+    "status": 200,
+    "accepts": 1,
+    "legal": true,
+    "sha256": "7b5c57071e96cd6cf3171f6b5682af655ac868d6fde4e1a539195d3f6efdfc31"
+  },
+  {
+    "id": "legal-options-asterisk",
+    "file": "legal-options-asterisk.http",
+    "desc": "asterisk-form 请求目标（协议层接受，业务无此路由回 404）",
+    "group": "legal",
+    "expected": "accept",
+    "status": 404,
+    "accepts": 1,
+    "legal": true,
+    "note": "404 是路由结果；协议层必须接受 asterisk-form",
+    "sha256": "3b0944c242e69e16691abbe815306fbae3b68dac75e9a137bb4f0d7977ad72e6"
+  },
+  {
+    "id": "legal-pipeline-2",
+    "file": "legal-pipeline-2.http",
+    "desc": "流水线：POST 后紧跟 GET，边界精确",
+    "group": "legal",
+    "expected": "accept",
+    "accepts": 2,
+    "legal": true,
+    "sha256": "56bcaf2324c9375a00cf8d24f3358518866f205e0349b4ae8f1d1f8ee7f6e995"
+  },
+  {
+    "id": "legal-post-chunked-ext",
+    "file": "legal-post-chunked-ext.http",
+    "desc": "chunked 多块、分块扩展与 trailer",
+    "group": "legal",
+    "expected": "accept",
+    "status": 201,
+    "accepts": 1,
+    "legal": true,
+    "sha256": "f1edef26ea27184561ec448fd814df8745c5f659e3586bc3d5cf0c1eeed7b326"
+  },
+  {
+    "id": "legal-post-fixed",
+    "file": "legal-post-fixed.http",
+    "desc": "固定长度消息体",
+    "group": "legal",
+    "expected": "accept",
+    "status": 201,
+    "accepts": 1,
+    "legal": true,
+    "sha256": "ef0d233d048d628c96e1694a4d1f0331c9499965785a0961201e3c018bef69ba"
+  },
+  {
+    "id": "smuggle-duplicate-cl-differ",
+    "file": "smuggle-duplicate-cl-differ.http",
+    "desc": "重复 Content-Length 长度不一致",
+    "group": "smuggling",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "framing",
+    "sha256": "5278f80aed0bd5bed3ac73f7a1fa99846091451ae11fbabc1458e4a7dbccd2d8"
+  },
+  {
+    "id": "smuggle-te-cl-both",
+    "file": "smuggle-te-cl-both.http",
+    "desc": "CL.TE 经典形态：CL 与 TE 同时出现",
+    "group": "smuggling",
+    "expected": "reject",
+    "status": 400,
+    "kind": "invalid_request",
+    "phase": "framing",
+    "sha256": "b180433e793709d965141d5c0abff3cc16b8c77a485b6eea875b888eacfe0813"
+  },
+  {
+    "id": "trunc-chunk-data",
+    "file": "trunc-chunk-data.http",
+    "desc": "chunk-data 中途 EOF",
+    "group": "truncation",
+    "expected": "truncated",
+    "sha256": "f16682bf18b8d635abfb0f5293b4603a503d571244bb65e7b5deb23544b07315"
+  },
+  {
+    "id": "trunc-cl-body-offbyone",
+    "file": "trunc-cl-body-offbyone.http",
+    "desc": "声明 33 实际 32：内嵌请求串不得因为截断被当作下一请求",
+    "group": "truncation",
+    "expected": "truncated",
+    "note": "期望服务端关闭连接；内嵌的 GET 永不被处理",
+    "sha256": "0bfbb7e21309ce6f5f2e9c048b1e429bd7a817a7ad91f839ead29c064151c8b6"
+  },
+  {
+    "id": "trunc-fixed-body",
+    "file": "trunc-fixed-body.http",
+    "desc": "固定长度体提前 EOF",
+    "group": "truncation",
+    "expected": "truncated",
+    "sha256": "4791bf1cec12f3222f3a1d737a2caa3f9a29262b8830a3334763da9370f33a5f"
+  },
+  {
+    "id": "trunc-header-no-terminator",
+    "file": "trunc-header-no-terminator.http",
+    "desc": "头部无终止空行即 EOF",
+    "group": "truncation",
+    "expected": "truncated",
+    "sha256": "0addceda80e80658a4b702e79744adee5ff15a6f051982c94b6305b3830aa47f"
+  }
+]

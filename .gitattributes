@@ -1,0 +1,3 @@
+# 线协议夹具必须逐字节保留 CRLF，禁止任何签出/签入行尾转换。
+*.http -text
+SHA256SUMS -text
