@@ -1,0 +1,15 @@
+# binaries
+/mqttd
+/mqttctl
+/bin/
+*.exe
+
+# local data / databases
+/data/
+*.db
+*.db-wal
+*.db-shm
+
+# test/tool output
+*.out
+/tmp/
