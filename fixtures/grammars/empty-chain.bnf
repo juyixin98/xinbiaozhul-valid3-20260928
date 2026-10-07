@@ -1,0 +1,5 @@
+# Mutual nullability; start derives epsilon through a chain.
+S -> A B ;
+A -> epsilon ;
+B -> C ;
+C -> epsilon ;

@@ -1,0 +1,708 @@
+{
+  "start": "E",
+  "alphabet": [
+    "id",
+    "+"
+  ],
+  "maxLength": 5,
+  "rows": [
+    {
+      "input": [],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id"
+      ],
+      "accepted": true,
+      "status": "exact",
+      "count": "1"
+    },
+    {
+      "input": [
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": true,
+      "status": "exact",
+      "count": "1"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "id",
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": true,
+      "status": "exact",
+      "count": "1"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "id",
+        "+",
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "id",
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "id",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+",
+        "id",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+",
+        "id",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+",
+        "+",
+        "id"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    },
+    {
+      "input": [
+        "+",
+        "+",
+        "+",
+        "+",
+        "+"
+      ],
+      "accepted": false,
+      "status": "exact",
+      "count": "0"
+    }
+  ]
+}

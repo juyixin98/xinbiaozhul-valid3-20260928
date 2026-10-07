@@ -1,0 +1,2 @@
+# Two identical productions: duplicate derivations are real ambiguity.
+S -> 'a' | 'a' ;

@@ -1,0 +1,2 @@
+# Fully binary bracketed expressions, unambiguous.
+E -> '(' E '+' E ')' | 'id' ;

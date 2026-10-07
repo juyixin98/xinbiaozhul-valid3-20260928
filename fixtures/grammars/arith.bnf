@@ -1,0 +1,6 @@
+# Classic ambiguous expression grammar: no precedence/associativity,
+# so "id + id + id" and "id + id * id" have multiple parses.
+E -> E '+' E
+  | E '*' E
+  | 'id'
+  ;

@@ -1,0 +1,2 @@
+# Unambiguous nested parentheses grammar.
+S -> S '(' ')' | '(' ')' ;

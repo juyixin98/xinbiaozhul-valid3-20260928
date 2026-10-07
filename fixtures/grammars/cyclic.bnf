@@ -1,0 +1,5 @@
+# Left-recursive nullable cycle: S => S =>* epsilon gives infinitely
+# many derivations of the empty string (pump S -> S any number of times).
+S -> S
+  | epsilon
+  ;

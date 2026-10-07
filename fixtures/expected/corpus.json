@@ -1,0 +1,96 @@
+{
+  "_comment": "Hand-computed expected results. Counts are full derivation counts (bigint). See handcounts.md for the arithmetic.",
+  "cases": [
+    {
+      "id": "arith-id",
+      "grammar": "../grammars/arith.bnf",
+      "start": "E",
+      "input": ["id"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "1" }
+    },
+    {
+      "id": "arith-plus-3",
+      "grammar": "../grammars/arith.bnf",
+      "start": "E",
+      "input": ["id", "+", "id", "+", "id"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "2" }
+    },
+    {
+      "id": "arith-plusmul-3",
+      "grammar": "../grammars/arith.bnf",
+      "start": "E",
+      "input": ["id", "+", "id", "*", "id"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "2" }
+    },
+    {
+      "id": "arith-5",
+      "grammar": "../grammars/arith.bnf",
+      "start": "E",
+      "input": ["id", "+", "id", "*", "id", "+", "id"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "5" }
+    },
+    {
+      "id": "arith-reject",
+      "grammar": "../grammars/arith.bnf",
+      "start": "E",
+      "input": ["id", "+"],
+      "expected": { "verdict": "reject" }
+    },
+    {
+      "id": "empty-chain-epsilon",
+      "grammar": "../grammars/empty-chain.bnf",
+      "start": "S",
+      "input": [],
+      "expected": { "verdict": "accept", "status": "exact", "count": "1" }
+    },
+    {
+      "id": "cyclic-empty-infinite",
+      "grammar": "../grammars/cyclic.bnf",
+      "start": "S",
+      "input": [],
+      "expected": { "verdict": "accept", "status": "infinite" }
+    },
+    {
+      "id": "dup-two-derivations",
+      "grammar": "../grammars/dup.bnf",
+      "start": "S",
+      "input": ["a"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "2" }
+    },
+    {
+      "id": "leftrec-chain",
+      "grammar": "../grammars/leftrec.bnf",
+      "start": "E",
+      "input": ["id", "+", "id", "+", "id"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "1" }
+    },
+    {
+      "id": "paren-n1",
+      "grammar": "../grammars/paren.bnf",
+      "start": "S",
+      "input": ["(", ")"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "1" }
+    },
+    {
+      "id": "paren-n2",
+      "grammar": "../grammars/paren.bnf",
+      "start": "S",
+      "input": ["(", ")", "(", ")"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "1" }
+    },
+    {
+      "id": "paren-reject",
+      "grammar": "../grammars/paren.bnf",
+      "start": "S",
+      "input": ["("],
+      "expected": { "verdict": "reject" }
+    },
+    {
+      "id": "binary-unambiguous",
+      "grammar": "../grammars/binary.bnf",
+      "start": "E",
+      "input": ["(", "id", "+", "id", ")"],
+      "expected": { "verdict": "accept", "status": "exact", "count": "1" }
+    }
+  ]
+}

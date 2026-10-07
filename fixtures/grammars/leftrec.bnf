@@ -1,0 +1,4 @@
+# Direct left recursion over terminals.
+E -> E '+' 'id'
+  | 'id'
+  ;
