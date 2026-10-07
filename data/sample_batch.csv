@@ -1,0 +1,8 @@
+# Polyline: retained zero segment, horizontal segment, vertical segment.
+V,0,0
+V,0,0
+V,2,0
+V,2,2
+Q,ZERO_TIE,0,1
+Q,CORNER_TIE,1,1
+Q,ENDPOINT,2,3
