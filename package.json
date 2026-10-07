@@ -1,0 +1,29 @@
+{
+  "name": "earley-shared-forest",
+  "version": "1.0.0",
+  "description": "Earley recognizer and shared packed parse forest for ambiguous and left-recursive grammars",
+  "type": "module",
+  "bin": {
+    "earley-forest": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --import tsx --test tests/",
+    "verify": "sh scripts/verify.sh"
+  },
+  "keywords": [
+    "earley",
+    "parser",
+    "shared-pack-parse-forest",
+    "ambiguity",
+    "left-recursion"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "arithmetic": {
+    "id": 1,
+    "id+id": 1,
+    "id*id": 1,
+    "id+id+id": 2,
+    "id+id*id": 2,
+    "id*id+id": 2,
+    "id*id*id": 2
+  },
+  "empty": {
+    "": 1
+  },
+  "leftRecursiveEpsilon": {
+    "derivationBudget": 50,
+    "expansionBudget": 50
+  },
+  "multiDerivationEmpty": {
+    "": 2
+  }
+}

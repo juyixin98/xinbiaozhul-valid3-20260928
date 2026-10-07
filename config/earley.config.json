@@ -1,0 +1,15 @@
+{
+  "recognition": {
+    "includeChartSnapshots": true,
+    "maxDiagnosticItemsPerChart": 12
+  },
+  "forest": {
+    "maxDerivations": 1000,
+    "maxExpansions": 5000
+  },
+  "diagnostics": {
+    "redactInput": true,
+    "showTerminalValues": false,
+    "mask": "***redacted***"
+  }
+}
