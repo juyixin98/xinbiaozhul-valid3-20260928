@@ -1,0 +1,9 @@
+Project: minimum_bounding_rectangle
+Language: C++20
+CMake minimum: 3.20
+Build-time dependency:
+  Boost exactly 1.83.0, header-only Boost.Multiprecision component
+  Local development/probe version observed: 1.83.0 (/usr/include/boost)
+Runtime dependencies:
+  C++ standard library only
+No container runtime, package manager, network service, or external actor is used.

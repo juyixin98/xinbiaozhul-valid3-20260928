@@ -1,0 +1,9 @@
+#include <iostream>
+
+int main() {
+    std::cout
+      << R"({"run_id":"square_with_interior","near_collinear_tolerance":"1/1000000","points":[{"id":"a","x":"0","y":"0"},{"id":"b","x":"4","y":"0"},{"id":"c","x":"4","y":"3"},{"id":"d","x":"0","y":"3"},{"id":"e","x":"2","y":"1"},{"id":"f","x":"2","y":"0"}]})" << '\n'
+      << R"({"run_id":"single_point","points":[{"id":"only","x":"7/2","y":"-1.25"}]})" << '\n'
+      << R"({"run_id":"collinear","points":[{"id":"a","x":"-3","y":"1"},{"id":"b","x":"0","y":"1"},{"id":"c","x":"2","y":"1"}]})" << '\n';
+    return 0;
+}
